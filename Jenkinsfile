@@ -25,7 +25,6 @@ pipeline {
         }
 
         stage('Deploy to Dev') {
-            when { expression { false } }
             steps {
                 sh 'docker stop app-test-dockerisation || true'
                 sh 'docker rm app-test-dockerisation || true'
