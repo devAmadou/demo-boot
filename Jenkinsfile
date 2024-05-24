@@ -1,6 +1,7 @@
 pipeline {
     agent any
 
+    stages {
         stage('Build Artifact sans les Tests') {
             steps {
                 sh 'mvn clean package -DskipTests=true'
