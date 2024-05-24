@@ -1,17 +1,6 @@
 pipeline {
     agent any
 
-    stages {
-        stage('Connect to Github') {
-            steps {
-                // Get some code from a GitHub repository
-                git(
-                    url : "https://github.com/devAmadou/demo-boot.git",
-                    branch :  "main"
-                )
-            }
-        }
-
         stage('Build Artifact sans les Tests') {
             steps {
                 sh 'mvn clean package -DskipTests=true'
